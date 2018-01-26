@@ -11813,10 +11813,13 @@ div#notebook {
 <p>Null Hypothsis, H0 - No change in time between two reading tasks (congruent or incongruent)<br>
 Alternate Hypothesis, H1 - incongruent task take more time than congruent.<br>
 H0: μi ≤ μc (μi - population mean of incongruent values, μc - population mean of congruent values)</p>
-<p>Null Hypothesis: the incongruent saying color name when it differs from the text is easier than (or just as easy as) saying it when the text matches</p>
 <p>H1: μi &gt; μc (μi - population mean of incongruent values, μc - population mean of congruent values)</p>
-<p><strong>statistical test</strong><br>
-statistical test for our experiment would be a one-tailed t-test because our sample size less than 30 and we don't know the population standard deviations</p>
+<p><strong>statistical test</strong>   dependent t-test (two tailed)</p>
+<ul>
+<li>We need to compare the means of two related groups to determine the statistically significant difference between two means.</li>
+<li>We are assuming distributions are nearly normal and we are comparing 2 dependent samples of data  </li>
+<li>our sample size less than 30 and we don't know the population standard deviations</li>
+</ul>
 
 </div>
 </div>
@@ -11833,7 +11836,7 @@ statistical test for our experiment would be a one-tailed t-test because our sam
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[29]:</div>
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
@@ -11851,7 +11854,7 @@ statistical test for our experiment would be a one-tailed t-test because our sam
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[30]:</div>
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;./stroopdata.csv&#39;</span><span class="p">)</span>
@@ -11901,7 +11904,7 @@ standard deviation for Incongruent 4.696
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[31]:</div>
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">distplot</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Congruent&#39;</span><span class="p">])</span>
@@ -11916,12 +11919,12 @@ standard deviation for Incongruent 4.696
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[31]:</div>
+<div class="prompt output_prompt">Out[3]:</div>
 
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&lt;matplotlib.axes._subplots.AxesSubplot at 0x1fa1f958c88&gt;</pre>
+<pre>&lt;matplotlib.axes._subplots.AxesSubplot at 0x2af82bd0710&gt;</pre>
 </div>
 
 </div>
@@ -12156,7 +12159,7 @@ FOLXrgCZhD4B+AhNhXzS2JKEuDnScxdCCBOSMXchhDAhCXchhDAhCXchhDAhCXchhDAhCXchhDCh
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[32]:</div>
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">distplot</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Incongruent&#39;</span><span class="p">])</span>
@@ -12171,12 +12174,12 @@ FOLXrgCZhD4B+AhNhXzS2JKEuDnScxdCCBOSMXchhDAhCXchhDAhCXchhDAhCXchhDAhCXchhDCh
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[32]:</div>
+<div class="prompt output_prompt">Out[4]:</div>
 
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&lt;matplotlib.axes._subplots.AxesSubplot at 0x1fa1fa7b208&gt;</pre>
+<pre>&lt;matplotlib.axes._subplots.AxesSubplot at 0x2afff539588&gt;</pre>
 </div>
 
 </div>
@@ -12442,7 +12445,7 @@ the mean is pretty close to the peak in both graphs which would indicate a norma
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[33]:</div>
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#Sample size</span>
@@ -12474,7 +12477,7 @@ the mean is pretty close to the peak in both graphs which would indicate a norma
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[34]:</div>
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#t-critical value for a 95% confidence level and 23 d.f.</span>
@@ -12490,7 +12493,7 @@ the mean is pretty close to the peak in both graphs which would indicate a norma
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[34]:</div>
+<div class="prompt output_prompt">Out[6]:</div>
 
 
 
@@ -12518,7 +12521,7 @@ the mean is pretty close to the peak in both graphs which would indicate a norma
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[35]:</div>
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Difference&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Congruent&#39;</span><span class="p">]</span> <span class="o">-</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Incongruent&#39;</span><span class="p">]</span>
@@ -12557,7 +12560,7 @@ the mean is pretty close to the peak in both graphs which would indicate a norma
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[36]:</div>
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="mf">7.97</span><span class="o">/</span><span class="p">(</span><span class="mf">4.8648</span> <span class="o">/</span> <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">24</span><span class="p">))</span>
@@ -12572,7 +12575,7 @@ the mean is pretty close to the peak in both graphs which would indicate a norma
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[36]:</div>
+<div class="prompt output_prompt">Out[8]:</div>
 
 
 
